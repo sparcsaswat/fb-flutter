@@ -44,7 +44,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     TextFormField(
                       cursorColor: Colors.white,
                       style: TextStyle(color: Colors.white),
-                      keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white)),
@@ -68,9 +67,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       padding: EdgeInsets.only(top: 10.0),
                     ),
                     TextFormField(
+                      obscureText: true,
                       cursorColor: Colors.white,
                       style: TextStyle(color: Colors.white),
-                      keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white)),
@@ -81,9 +80,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       padding: EdgeInsets.only(top: 10.0),
                     ),
                     TextFormField(
+                      obscureText: true,
                       cursorColor: Colors.white,
                       style: TextStyle(color: Colors.white),
-                      keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white)),
