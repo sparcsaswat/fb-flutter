@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -33,7 +35,7 @@ class _PreferencePageState extends State<PreferencePage> {
                       child: Column(
                         children: <Widget>[
                           Container(
-                            padding: EdgeInsets.only(top: 30.0),
+                            padding: EdgeInsets.only(top: Platform.isIOS?30.0:5.0),
                             child: Column(
                               children: <Widget>[
                                 Row(
@@ -90,7 +92,7 @@ class _PreferencePageState extends State<PreferencePage> {
                           ),
                           Container(
                             margin: EdgeInsets.only(top: 10.0),
-                            height: 150.0,
+                            height: Platform.isIOS?150.0:110.0,
                             width: MediaQuery.of(context).size.width,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
@@ -100,7 +102,6 @@ class _PreferencePageState extends State<PreferencePage> {
                                       borderRadius: BorderRadius.circular(20.0),
                                       color: Colors.red),
                                   width: 150.0,
-                                  //color: Colors.red,
                                 ),
                                 Padding(
                                   padding: EdgeInsets.all(5.0),

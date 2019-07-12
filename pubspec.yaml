@@ -24,7 +24,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   http: ^0.12.0+2
-  shared_preferences: ^0.5.3+2
+  #shared_preferences: ^0.5.3+2
 
 dev_dependencies:
   flutter_test:
@@ -46,6 +46,8 @@ flutter:
   assets:
    -  assets/splash.png
    -  assets/logobuddy.png
+   -  assets/tickanimation.png
+   -  assets/home-bg.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

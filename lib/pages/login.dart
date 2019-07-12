@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 import './registration.dart';
+import './homepage.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -81,27 +81,35 @@ class _LoginPageState extends State<LoginPage> {
                       padding: EdgeInsets.only(top: 40.0),
                     ),
                     RaisedButton(
-                      padding: EdgeInsets.only(left: 40.0,right: 40.0),
+                      padding: EdgeInsets.only(left: 40.0, right: 40.0),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0)),
                       color: Color.fromRGBO(127, 168, 235, 1),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) => HomePage()));
+                      },
                       child: Text('LOGIN'),
                     ),
                     Padding(padding: EdgeInsets.only(top: 25.0)),
                     Text(
                       'New Member?',
-                      style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                     RaisedButton(
-                      padding: EdgeInsets.only(left: 40.0,right: 40.0),
+                      padding: EdgeInsets.only(left: 40.0, right: 40.0),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0)),
                       color: Color.fromRGBO(127, 168, 235, 1),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(
-                            builder: (BuildContext context)=> RegistrationPage()
-                        ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    RegistrationPage()));
                       },
                       child: Text('SIGN UP'),
                     ),
