@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_country_picker/flutter_country_picker.dart';
 
 import './calender.dart';
 
@@ -11,6 +12,7 @@ class PreferencePage extends StatefulWidget {
 }
 
 class _PreferencePageState extends State<PreferencePage> {
+  Country _selected;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +37,8 @@ class _PreferencePageState extends State<PreferencePage> {
                       child: Column(
                         children: <Widget>[
                           Container(
-                            padding: EdgeInsets.only(top: Platform.isIOS?30.0:5.0),
+                            padding: EdgeInsets.only(
+                                top: Platform.isIOS ? 30.0 : 5.0),
                             child: Column(
                               children: <Widget>[
                                 Row(
@@ -92,7 +95,7 @@ class _PreferencePageState extends State<PreferencePage> {
                           ),
                           Container(
                             margin: EdgeInsets.only(top: 10.0),
-                            height: Platform.isIOS?150.0:110.0,
+                            height: Platform.isIOS ? 150.0 : 110.0,
                             width: MediaQuery.of(context).size.width,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
@@ -182,6 +185,19 @@ class _PreferencePageState extends State<PreferencePage> {
                           ),
                           hintText: "Where are you from ?",
                           hintStyle: TextStyle(color: Colors.black)),
+                    ),
+                    Center(
+                      child: CountryPicker(
+                        showFlag: true,
+                        dense: false,
+                        showDialingCode: false,
+                        onChanged: (Country country) {
+                          setState(() {
+                            _selected = country;
+                          });
+                        },
+                        selectedCountry: _selected,
+                      ),
                     ),
                   ],
                 ),
