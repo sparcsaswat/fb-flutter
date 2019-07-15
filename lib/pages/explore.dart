@@ -206,158 +206,159 @@ class _ExplorePageState extends State<ExplorePage> {
 
   Widget exploreplaceview() {
     return Container(
-        child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: <Widget>[
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height / 3,
-          child: ClipPath(
-            clipper: ClippingClass(),
-            child: Container(
-              padding: EdgeInsets.only(left: 20.0),
-              decoration: new BoxDecoration(
-                color: Color.fromRGBO(45, 72, 156, 1),
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height / 3,
+            child: ClipPath(
+              clipper: ClippingClass(),
               child: Container(
-                padding: EdgeInsets.only(top: 10.0),
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      'Buddy Suggestion',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    ),
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: 10,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Card(
-                            color: Color.fromRGBO(45, 72, 156, 1),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Color.fromRGBO(45, 72, 156, 1)),
-                              child: ListTile(
-                                leading: CircleAvatar(
-                                  child: Icon(Icons.restaurant),
-                                ),
-                                title: Text(
-                                  'Haldirams',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                subtitle: Row(
-                                  children: <Widget>[
-                                    Expanded(
-                                      child: Text(
-                                        'Address',
-                                        style: TextStyle(color: Colors.white),
+                padding: EdgeInsets.only(left: 20.0),
+                decoration: new BoxDecoration(
+                  color: Color.fromRGBO(45, 72, 156, 1),
+                ),
+                child: Container(
+                  padding: EdgeInsets.only(top: 10.0),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'Buddy Suggestion',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      ),
+                      Expanded(
+                        child: ListView.builder(
+                          itemCount: 10,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Card(
+                              color: Color.fromRGBO(45, 72, 156, 1),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Color.fromRGBO(45, 72, 156, 1)),
+                                child: ListTile(
+                                  leading: CircleAvatar(
+                                    child: Icon(Icons.restaurant),
+                                  ),
+                                  title: Text(
+                                    'Haldirams',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  subtitle: Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                        child: Text(
+                                          'Address',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          );
-                        },
-                      ),
-                    )
-                  ],
+                            );
+                          },
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-        Container(
-          child: Center(
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(top: 20),
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Container(
-                              padding: EdgeInsets.only(left: 10.0),
-                              child: Text(
-                                'Food Preference: ',
-                                style: TextStyle(
-                                    color: Color.fromRGBO(45, 72, 156, 1),
-                                    //fontWeight: FontWeight.bold,
-                                    fontSize: 18),
+          Container(
+            child: Center(
+              child: Container(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.only(left: 10.0),
+                                child: Text(
+                                  'Food Preference: ',
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(45, 72, 156, 1),
+                                      //fontWeight: FontWeight.bold,
+                                      fontSize: 18),
+                                ),
                               ),
-                            ),
-                            SizedBox(),
-                          ],
-                        )
-                      ],
+                              SizedBox(),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 10.0),
-                    height: Platform.isIOS ? 150.0 : 110.0,
-                    width: MediaQuery.of(context).size.width,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: Colors.red),
-                          width: 150.0,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(5.0),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: Colors.blue),
-                          width: 160.0,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(5.0),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: Colors.green),
-                          width: 160.0,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(5.0),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: Colors.yellow),
-                          width: 160.0,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(5.0),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: Colors.orange),
-                          width: 160.0,
-                        ),
-                      ],
+                    Container(
+                      margin: EdgeInsets.only(top: 10.0),
+                      height: Platform.isIOS ? 150.0 : 110.0,
+                      width: MediaQuery.of(context).size.width,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20.0),
+                                color: Colors.red),
+                            width: 150.0,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(5.0),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20.0),
+                                color: Colors.blue),
+                            width: 160.0,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(5.0),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20.0),
+                                color: Colors.green),
+                            width: 160.0,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(5.0),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20.0),
+                                color: Colors.yellow),
+                            width: 160.0,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(5.0),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20.0),
+                                color: Colors.orange),
+                            width: 160.0,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        )
-      ],
-    ));
+          )
+        ],
+      ),
+    );
   }
 
   @override
