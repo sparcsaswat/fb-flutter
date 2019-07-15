@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 import '../utils/bottomnavigtor.dart';
-
-class MyProfilePage extends StatefulWidget {
+class NotificationPage extends StatefulWidget {
   @override
-  _MyProfilePageState createState() => _MyProfilePageState();
+  _NotificationPageState createState() => _NotificationPageState();
 }
 
-class _MyProfilePageState extends State<MyProfilePage> {
+class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(45, 72, 156, 1),
+            backgroundColor: Color.fromRGBO(45, 72, 156, 1),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: flotingbotton(context),
       bottomNavigationBar: buoomnavigationbar(context),
-      body: Text('Profile'),
+      body: Text('Notification'),
     );
   }
 }
