@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../utils/bottomnavigtor.dart';
@@ -125,10 +126,238 @@ class _ExplorePageState extends State<ExplorePage> {
       child: ListView.builder(
         itemCount: 10,
         itemBuilder: (BuildContext context, int index) {
-          return Text('data');
+          return Container(
+            padding:
+                EdgeInsets.only(left: 20, right: 20.0, top: 10.0, bottom: 10.0),
+            child: Card(
+              color: Color.fromRGBO(211, 215, 222, 1),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0)),
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        width: 50.0,
+                        height: 50.0,
+                        decoration: new BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black,
+                                blurRadius: 3.0,
+                              ),
+                            ]),
+                        child: Center(
+                          child: Text(
+                            'S',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                shadows: [
+                                  Shadow(
+                                      color: Colors.blueGrey, blurRadius: 3.0)
+                                ]),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10.0),
+                      ),
+                      Text(
+                        'Saswat',
+                        style: TextStyle(
+                            color: Color.fromRGBO(45, 72, 156, 1),
+                            fontSize: 16.0),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
         },
       ),
     );
+  }
+
+  Widget explorepeopleview() {
+    return Container(
+      child: CustomScrollView(
+        slivers: <Widget>[
+          SliverList(
+            delegate: SliverChildListDelegate(
+                [googlemap(), quickconnect(), foodbudies()]),
+          ),
+          SliverGrid(
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+            delegate: SliverChildListDelegate([peoplelist()]),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget exploreplaceview() {
+    return Container(
+        child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height / 3,
+          child: ClipPath(
+            clipper: ClippingClass(),
+            child: Container(
+              padding: EdgeInsets.only(left: 20.0),
+              decoration: new BoxDecoration(
+                color: Color.fromRGBO(45, 72, 156, 1),
+              ),
+              child: Container(
+                padding: EdgeInsets.only(top: 10.0),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      'Buddy Suggestion',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: 10,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Card(
+                            color: Color.fromRGBO(45, 72, 156, 1),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(45, 72, 156, 1)),
+                              child: ListTile(
+                                leading: CircleAvatar(
+                                  child: Icon(Icons.restaurant),
+                                ),
+                                title: Text(
+                                  'Haldirams',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                subtitle: Row(
+                                  children: <Widget>[
+                                    Expanded(
+                                      child: Text(
+                                        'Address',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+        Container(
+          child: Center(
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.only(top: 20),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                'Food Preference: ',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(45, 72, 156, 1),
+                                    //fontWeight: FontWeight.bold,
+                                    fontSize: 18),
+                              ),
+                            ),
+                            SizedBox(),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10.0),
+                    height: Platform.isIOS ? 150.0 : 110.0,
+                    width: MediaQuery.of(context).size.width,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20.0),
+                              color: Colors.red),
+                          width: 150.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(5.0),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20.0),
+                              color: Colors.blue),
+                          width: 160.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(5.0),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20.0),
+                              color: Colors.green),
+                          width: 160.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(5.0),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20.0),
+                              color: Colors.yellow),
+                          width: 160.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(5.0),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20.0),
+                              color: Colors.orange),
+                          width: 160.0,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        )
+      ],
+    ));
   }
 
   @override
@@ -164,36 +393,28 @@ class _ExplorePageState extends State<ExplorePage> {
             ),
           ),
         ),
-        body: Container(
-          child: CustomScrollView(
-            slivers: <Widget>[
-              SliverList(
-                delegate: SliverChildListDelegate(
-                    [googlemap(), quickconnect(), foodbudies()]),
-              ),
-              SliverGrid(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
-                delegate: SliverChildListDelegate([
-                  Container(
-                    decoration: BoxDecoration(
-                      
-                    ),
-                    child: ListView.builder(
-                      itemCount: 10,
-                      itemBuilder: (BuildContext conntext,int index){
-                        return Container(
-                          child: Text('data'),
-                        );
-                      },
-                    ),
-                  ),
-                ]),
-              )
-            ],
-          ),
+        body: TabBarView(
+          children: <Widget>[explorepeopleview(), exploreplaceview()],
         ),
       ),
     );
   }
+}
+
+class ClippingClass extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0.0, size.height - 40);
+    path.quadraticBezierTo(
+        size.width / 4, size.height, size.width / 2, size.height);
+    path.quadraticBezierTo(size.width - (size.width / 4), size.height,
+        size.width, size.height - 40);
+    path.lineTo(size.width, 0.0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }

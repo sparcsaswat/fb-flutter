@@ -13,6 +13,7 @@ class _CalenderPageState extends State<CalenderPage> {
   bool isSelected = false;
 
   List<String> timeList = [
+    '8 AM',
     '9 AM',
     '10 AM',
     '11 AM',
@@ -24,8 +25,7 @@ class _CalenderPageState extends State<CalenderPage> {
     '5 PM',
     '6 PM',
     '7 PM',
-    '8 PM',
-    '9 PM'
+    '8 PM'
   ];
 
   @override

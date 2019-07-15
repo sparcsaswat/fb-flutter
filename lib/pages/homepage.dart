@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../utils/bottomnavigtor.dart';
@@ -112,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.only(top: 30.0),
+                      padding: EdgeInsets.only(top: Platform.isIOS?30.0:10.0),
                     ),
                     Container(
                       child: Center(
@@ -166,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                       )),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 20),
+                      padding: EdgeInsets.only(top: Platform.isIOS?20.0:10.0),
                     ),
                     Container(
                       child: Center(
@@ -220,7 +222,7 @@ class _HomePageState extends State<HomePage> {
                       )),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 20),
+                      padding: EdgeInsets.only(top: Platform.isIOS?20:10),
                     ),
                     Container(
                       child: Center(
