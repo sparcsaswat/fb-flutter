@@ -41,7 +41,7 @@ class _MyProfilePageState extends State<MyProfilePage>
 
   Widget interestview() {
     return Container(
-      padding: EdgeInsets.only(left: 10.0,right: 10.0),
+      padding: EdgeInsets.only(left: 10.0, right: 10.0),
       child: CustomScrollView(
         slivers: <Widget>[
           SliverGrid(
@@ -97,7 +97,7 @@ class _MyProfilePageState extends State<MyProfilePage>
 
   Widget preferenceview() {
     return Container(
-      padding: EdgeInsets.only(left: 10.0,right: 10.0),
+      padding: EdgeInsets.only(left: 10.0, right: 10.0),
       child: CustomScrollView(
         slivers: <Widget>[
           SliverGrid(
@@ -400,8 +400,8 @@ class _MyProfilePageState extends State<MyProfilePage>
             ),
             Container(
               margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 2,
-                  ),
+                top: MediaQuery.of(context).size.height / 2,
+              ),
               child: TabBarView(
                 controller: _tabController,
                 children: <Widget>[

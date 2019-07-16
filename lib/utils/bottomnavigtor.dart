@@ -56,7 +56,7 @@ Widget buoomnavigationbar(context) {
         appnavigator(context, ExplorePage());
       } else if (_currentindex == 1) {
         appnavigator(context, NotificationPage());
-      } else if (_currentindex == 1) {
+      } else if (_currentindex == 2) {
         appnavigator(context, ChatPage());
       } else {
         appnavigator(context, MyProfilePage());

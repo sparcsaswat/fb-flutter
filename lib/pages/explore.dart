@@ -123,65 +123,28 @@ class _ExplorePageState extends State<ExplorePage> {
 
   Widget peoplelist() {
     return Container(
-      child: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            padding:
-                EdgeInsets.only(left: 20, right: 20.0, top: 10.0, bottom: 10.0),
-            child: Card(
-              color: Color.fromRGBO(211, 215, 222, 1),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25.0)),
-              child: Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        width: 50.0,
-                        height: 50.0,
-                        decoration: new BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black,
-                                blurRadius: 3.0,
-                              ),
-                            ]),
-                        child: Center(
-                          child: Text(
-                            'S',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                shadows: [
-                                  Shadow(
-                                      color: Colors.blueGrey, blurRadius: 3.0)
-                                ]),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 10.0),
-                      ),
-                      Text(
-                        'Saswat',
-                        style: TextStyle(
-                            color: Color.fromRGBO(45, 72, 156, 1),
-                            fontSize: 16.0),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+      padding: EdgeInsets.only(left: 10.0, right: 10.0,top: 10.0),
+      child: CustomScrollView(
+        slivers: <Widget>[
+          SliverGrid(
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200.0,
+              mainAxisSpacing: 10.0,
+              crossAxisSpacing: 10.0,
+              childAspectRatio: 4.0,
             ),
-          );
-        },
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return Container(
+                  alignment: Alignment.center,
+                  color: Color.fromRGBO(211, 225, 252, 1),
+                  child: Text('Containt'),
+                );
+              },
+              childCount: 5,
+            ),
+          ),
+        ],
       ),
     );
   }
