@@ -141,7 +141,7 @@ class _ExplorePageState extends State<ExplorePage> {
                   child: Text('Containt'),
                 );
               },
-              childCount: 5,
+              childCount: 20,
             ),
           ),
         ],
