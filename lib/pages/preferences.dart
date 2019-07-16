@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_country_picker/flutter_country_picker.dart';
+//import 'package:flutter_country_picker/flutter_country_picker.dart';
 
 import './calender.dart';
 
@@ -12,7 +12,7 @@ class PreferencePage extends StatefulWidget {
 }
 
 class _PreferencePageState extends State<PreferencePage> {
-  Country _selected;
+  //Country _selected;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -186,19 +186,19 @@ class _PreferencePageState extends State<PreferencePage> {
                           hintText: "Where are you from ?",
                           hintStyle: TextStyle(color: Colors.black)),
                     ),
-                    Center(
-                      child: CountryPicker(
-                        showFlag: true,
-                        dense: false,
-                        showDialingCode: false,
-                        onChanged: (Country country) {
-                          setState(() {
-                            _selected = country;
-                          });
-                        },
-                        selectedCountry: _selected,
-                      ),
-                    ),
+                    // Center(
+                    //   child: CountryPicker(
+                    //     showFlag: true,
+                    //     dense: false,
+                    //     showDialingCode: false,
+                    //     onChanged: (Country country) {
+                    //       setState(() {
+                    //         _selected = country;
+                    //       });
+                    //     },
+                    //     selectedCountry: _selected,
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

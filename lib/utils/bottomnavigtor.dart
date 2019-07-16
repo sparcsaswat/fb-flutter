@@ -15,6 +15,9 @@ void appnavigator(context, page) {
 
 Widget buoomnavigationbar(context) {
   return BottomNavigationBar(
+    selectedItemColor: Color.fromRGBO(45, 72, 156, 1),
+    selectedLabelStyle: TextStyle(color: Color.fromRGBO(45, 72, 156, 1)),
+    selectedIconTheme: IconThemeData(color: Color.fromRGBO(45, 72, 156, 1)),
     currentIndex: _currentindex,
     type: BottomNavigationBarType.fixed,
     items: [
@@ -22,28 +25,28 @@ Widget buoomnavigationbar(context) {
         title: Text(''),
         icon: Icon(
           Icons.gps_fixed,
-          color: Color.fromRGBO(40, 21, 111, 1),
+          color: Color.fromRGBO(107, 109, 112, 1),
         ),
       ),
       BottomNavigationBarItem(
         title: Text(''),
         icon: Icon(
           Icons.notifications,
-          color: Color.fromRGBO(40, 21, 111, 1),
+          color: Color.fromRGBO(107, 109, 112, 1),
         ),
       ),
       BottomNavigationBarItem(
         title: Text(''),
         icon: Icon(
           Icons.forum,
-          color: Color.fromRGBO(40, 21, 111, 1),
+          color: Color.fromRGBO(107, 109, 112, 1),
         ),
       ),
       BottomNavigationBarItem(
         title: Text(''),
         icon: Icon(
           Icons.person_outline,
-          color: Color.fromRGBO(40, 21, 111, 1),
+          color: Color.fromRGBO(107, 109, 112, 1),
         ),
       ),
     ],
@@ -64,6 +67,7 @@ Widget buoomnavigationbar(context) {
 
 Widget flotingbotton(context) {
   return FloatingActionButton(
+    elevation: 2.0,
     backgroundColor: Color.fromRGBO(40, 21, 111, 1),
     child: Icon(Icons.add, color: Colors.white),
     onPressed: () {
