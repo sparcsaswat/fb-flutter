@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text(
-                                  'What would you like to do this ?',
+                                  'What would you like to do today ?',
                                   style: TextStyle(color: Colors.white),
                                 ),
                               ),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import './preferences.dart';
+import '../models/user.dart';
 
 class RegistrationPage extends StatefulWidget {
   @override
@@ -9,6 +10,8 @@ class RegistrationPage extends StatefulWidget {
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
+  var _formkey = new GlobalKey<FormState>();
+  User user = new User();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,6 +55,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   borderSide: BorderSide(color: Colors.white)),
                               hintText: "Name",
                               hintStyle: TextStyle(color: Colors.white)),
+                          validator: (String value) {
+                            if (value.isEmpty) {
+                              return 'Name id Requaird';
+                            }
+                          },
+                          onSaved: (String value) {
+                            user.name = value.trim();
+                          },
                         ),
                         Padding(
                           padding: EdgeInsets.only(top: 10.0),
@@ -61,10 +72,19 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           style: TextStyle(color: Colors.white),
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white)),
-                              hintText: "Email Id",
-                              hintStyle: TextStyle(color: Colors.white)),
+                            enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white)),
+                            hintText: "Email Id",
+                            hintStyle: TextStyle(color: Colors.white),
+                          ),
+                          validator: (String value) {
+                            if (value.isEmpty) {
+                              return 'Email id Requaird';
+                            }
+                          },
+                          onSaved: (String value) {
+                            user.email = value.trim();
+                          },
                         ),
                         Padding(
                           padding: EdgeInsets.only(top: 10.0),
@@ -74,10 +94,19 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           cursorColor: Colors.white,
                           style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white)),
-                              hintText: "Password",
-                              hintStyle: TextStyle(color: Colors.white)),
+                            enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white)),
+                            hintText: "Password",
+                            hintStyle: TextStyle(color: Colors.white),
+                          ),
+                          validator: (String value) {
+                            if (value.isEmpty) {
+                              return 'Password id Requaird';
+                            }
+                          },
+                          onSaved: (String value) {
+                            user.password = value.trim();
+                          },
                         ),
                         Padding(
                           padding: EdgeInsets.only(top: 10.0),
@@ -87,12 +116,22 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           cursorColor: Colors.white,
                           style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white)),
-                              hintText: "Confirm Password",
-                              hintStyle: TextStyle(color: Colors.white)),
+                            enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white)),
+                            hintText: "Confirm Password",
+                            hintStyle: TextStyle(color: Colors.white),
+                          ),
+                          validator: (String value) {
+                            if (value.isEmpty) {
+                              return 'Confirm Password id Requaird';
+                            } else if (user.password != value.trim()) {
+                              return 'Confirm Password donot match ';
+                            }
+                          },
                         ),
-                        Padding(padding: EdgeInsets.only(top: 25.0)),
+                        Padding(
+                          padding: EdgeInsets.only(top: 25.0),
+                        ),
                         RaisedButton(
                           padding: EdgeInsets.only(left: 40.0, right: 40.0),
                           shape: RoundedRectangleBorder(

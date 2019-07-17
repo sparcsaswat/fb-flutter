@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 //import 'package:flutter_country_picker/flutter_country_picker.dart';
 
-import './calender.dart';
+import './idinfo.dart';
 
 class PreferencePage extends StatefulWidget {
   @override
@@ -53,7 +53,7 @@ class _PreferencePageState extends State<PreferencePage> {
                                             MaterialPageRoute(
                                                 builder:
                                                     (BuildContext context) =>
-                                                        CalenderPage()));
+                                                        IdInfoPage()));
                                       },
                                       child: Text(
                                         'Next',
