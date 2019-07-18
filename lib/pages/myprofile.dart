@@ -221,20 +221,21 @@ class _MyProfilePageState extends State<MyProfilePage>
         child: Stack(
           children: <Widget>[
             Container(
-              height: MediaQuery.of(context).size.height / 3.5,
+              height: MediaQuery.of(context).size.height / 5,
               color: Color.fromRGBO(45, 72, 156, 1),
             ),
             Container(
               margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 5.2,
+                  top: MediaQuery.of(context).size.height / 8.5,
                   left: 10.0,
                   right: 10.0),
-              height: MediaQuery.of(context).size.height / 6.8,
+              //height: MediaQuery.of(context).size.height / 7,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20.0),
               ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Container(
                     child: Center(
@@ -261,7 +262,7 @@ class _MyProfilePageState extends State<MyProfilePage>
                             padding: EdgeInsets.only(top: 30.0),
                           ),
                           Container(
-                            padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                            padding: EdgeInsets.only(left: 10.0, right: 10.0,bottom: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
@@ -344,7 +345,7 @@ class _MyProfilePageState extends State<MyProfilePage>
             ),
             Container(
               margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 2.7,
+                  top: MediaQuery.of(context).size.height / 3,
                   left: 10.0,
                   right: 10.0),
               height: 40,
@@ -364,7 +365,7 @@ class _MyProfilePageState extends State<MyProfilePage>
             ),
             Container(
               margin: EdgeInsets.only(
-                  left: 30.0, top: MediaQuery.of(context).size.height / 7),
+                  left: 30.0, top: MediaQuery.of(context).size.height / 16),
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/img4.jpg'),
                 radius: 40,
@@ -376,7 +377,7 @@ class _MyProfilePageState extends State<MyProfilePage>
                 borderRadius: BorderRadius.circular(25.0),
               ),
               margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 2.3,
+                  top: MediaQuery.of(context).size.height /2.4,
                   left: 10.0,
                   right: 10.0),
               child: TabBar(
@@ -400,7 +401,7 @@ class _MyProfilePageState extends State<MyProfilePage>
             ),
             Container(
               margin: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height / 2,
+                top: MediaQuery.of(context).size.height / 1.9,
               ),
               child: TabBarView(
                 controller: _tabController,

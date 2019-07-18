@@ -5,8 +5,11 @@ import 'package:flutter/cupertino.dart';
 //import 'package:flutter_country_picker/flutter_country_picker.dart';
 
 import './idinfo.dart';
+import '../models/user.dart';
 
 class PreferencePage extends StatefulWidget {
+  final User userdata;
+  PreferencePage({this.userdata});
   @override
   _PreferencePageState createState() => _PreferencePageState();
 }

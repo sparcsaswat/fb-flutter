@@ -44,6 +44,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 Container(
                   padding: EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
                   child: Form(
+                    key: _formkey,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
@@ -111,40 +112,46 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         Padding(
                           padding: EdgeInsets.only(top: 10.0),
                         ),
-                        TextFormField(
-                          obscureText: true,
-                          cursorColor: Colors.white,
-                          style: TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
-                            enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white)),
-                            hintText: "Confirm Password",
-                            hintStyle: TextStyle(color: Colors.white),
-                          ),
-                          validator: (String value) {
-                            if (value.isEmpty) {
-                              return 'Confirm Password id Requaird';
-                            } else if (user.password != value.trim()) {
-                              return 'Confirm Password donot match ';
-                            }
-                          },
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 25.0),
-                        ),
+                        // TextFormField(
+                        //   obscureText: true,
+                        //   cursorColor: Colors.white,
+                        //   style: TextStyle(color: Colors.white),
+                        //   decoration: InputDecoration(
+                        //     enabledBorder: UnderlineInputBorder(
+                        //         borderSide: BorderSide(color: Colors.white)),
+                        //     hintText: "Confirm Password",
+                        //     hintStyle: TextStyle(color: Colors.white),
+                        //   ),
+                        //   validator: (String value) {
+                        //     if (value.isEmpty) {
+                        //       return 'Confirm Password id Requaird';
+                        //     } else if (user.password != value.trim()) {
+                        //       return 'Confirm Password donot match ';
+                        //     }
+                        //   },
+                        // ),
+                        // Padding(
+                        //   padding: EdgeInsets.only(top: 25.0),
+                        // ),
                         RaisedButton(
                           padding: EdgeInsets.only(left: 40.0, right: 40.0),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0)),
                           color: Color.fromRGBO(127, 168, 235, 1),
                           onPressed: () {
+                            if (!_formkey.currentState.validate()) {
+                              return;
+                            }
+                            _formkey.currentState.save();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        PreferencePage()));
+                                        PreferencePage(
+                                          userdata: user,
+                                        )));
                           },
-                          child: Text('Validate User'),
+                          child: Text('Next'),
                         ),
                       ],
                     ),
