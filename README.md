@@ -1,6 +1,6 @@
 # foodbuddy
 
-A new Flutter project.
+A new Flutter project with node backend.
 
 ## Getting Started
 
